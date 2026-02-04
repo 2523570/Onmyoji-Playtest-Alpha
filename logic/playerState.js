@@ -7,7 +7,7 @@
  * @param {number} startingHP
  * @returns {Array}
  */
-export function createPlayers(playerCount = 4, startingHP = 20) {
+export function createPlayers(playerCount = 4, startingHP = 80) {
   const elements = ["Fire", "Ice", "Wind", "Lightning"];
 
   return Array.from({ length: playerCount }, (_, i) => ({
