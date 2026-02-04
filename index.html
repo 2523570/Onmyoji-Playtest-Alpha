@@ -82,7 +82,8 @@
   <!-- MAIN SCRIPT -->
   <script type="module">
     import { startRound, submitSpells } from "./logic/roundFlow.js";
-    import { gameState } from "./gameState.js";
+    import { gameState, initGame } from "./gameState.js";
+    initGame(4);
 
     const roundInfo = document.getElementById("roundInfo");
     const clueInfo = document.getElementById("clueInfo");
@@ -91,9 +92,8 @@
     const combatResults = document.getElementById("combatResults");
     const nextRoundBtn = document.getElementById("nextRoundBtn");
 
-    import { initGame } from "./gameState.js";
+    
     // Start game immediately
-    initGame(4);
     startRound();
     renderRound();
 
