@@ -1,6 +1,6 @@
 // yokaiReveal.js
 
-import { gameState } from "./gameState.js";
+import { gameState } from "../gameState.js";
 
 /**
  * Returns only the information players are allowed to see
