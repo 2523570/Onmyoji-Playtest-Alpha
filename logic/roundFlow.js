@@ -39,6 +39,7 @@ export function submitSpells(submittedSpells) {
     gameState.round
   );
 
+  gameState.lastCombatResult = combatResult;
   revealCombatResults(combatResult);
 
   const allPlayersDefeated = resolvePlayerDamage(
@@ -55,7 +56,7 @@ export function submitSpells(submittedSpells) {
     return;
   }
 
-  advanceRound();
+  //advanceRound();
 }
 
 /**
