@@ -95,7 +95,14 @@
     
     // Start game immediately
     startRound();
-    renderRound();
+    
+// 🔒 Safety check before rendering
+if (!gameState.currentYokai) {
+  console.error("Yokai was not initialized");
+} else {
+  renderRound();
+}
+
 
     submitBtn.onclick = () => {
       // TEMP: auto-pick first spell from each hand
