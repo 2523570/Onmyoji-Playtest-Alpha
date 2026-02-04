@@ -1,5 +1,12 @@
 // gameState.js
 // Central source of truth for the playtest app
+const debugPanel = document.getElementById("debugPanel");
+
+export function debug(msg) {
+  if (!debugPanel) return;
+  debugPanel.textContent += "\n" + msg;
+}
+debug("gameState.js loaded");
 
 import { createPlayers, applyOverflowDamage, areAllPlayersDefeated } from "./playerState.js";
 
