@@ -90,7 +90,9 @@
     const combatResults = document.getElementById("combatResults");
     const nextRoundBtn = document.getElementById("nextRoundBtn");
 
+    import { initGame } from "./gameState.js";
     // Start game immediately
+    initGame(4);
     startRound();
     renderRound();
 
