@@ -16,11 +16,13 @@ export function startRound() {
   gameState.players.forEach(player => {
     if (!player.alive) return;
 
-    const hand = generateSpellHand();
-    gameState.spellHands.push({
-      playerId: player.id,
-      hand
-    });
+    const handState = generateSpellHand(player.element);
+gameState.spellHands.push({
+  playerId: player.id,
+  hand: handState.hand,
+  element: player.element
+});
+
   });
 
   showCluesOnly();
