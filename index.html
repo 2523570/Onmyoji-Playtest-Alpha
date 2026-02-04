@@ -107,8 +107,10 @@
       combatPanel.classList.remove("hidden");
     };
 
+    import { advanceRound } from "./gamestate.js";
     nextRoundBtn.onclick = () => {
       combatPanel.classList.add("hidden");
+      advanceRound();
       startRound();
       renderRound();
     };
