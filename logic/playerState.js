@@ -1,18 +1,22 @@
 // playerState.js
+// Handles player creation, HP tracking, and defeat conditions
 
-export function createPlayers(playerCount, startingHP = 20) {
-  const players = [];
+/**
+ * Creates the initial player list
+ * @param {number} playerCount
+ * @param {number} startingHP
+ * @returns {Array}
+ */
+export function createPlayers(playerCount = 4, startingHP = 20) {
+  const elements = ["Fire", "Ice", "Wind", "Lightning"];
 
-  for (let i = 0; i < playerCount; i++) {
-    players.push({
-      id: i,
-      name: `Player ${i + 1}`,
-      hp: startingHP,
-      alive: true
-    });
-  }
-
-  return players;
+  return Array.from({ length: playerCount }, (_, i) => ({
+    id: i,
+    name: `Player ${i + 1}`,
+    element: elements[i % elements.length],
+    hp: startingHP,
+    alive: true
+  }));
 }
 
 /**
@@ -32,6 +36,7 @@ export function applyOverflowDamage(players, overflowDamage) {
 
   livingPlayers.forEach(player => {
     player.hp -= damagePerPlayer;
+
     if (player.hp <= 0) {
       player.hp = 0;
       player.alive = false;
@@ -40,7 +45,7 @@ export function applyOverflowDamage(players, overflowDamage) {
 }
 
 /**
- * Checks if all players are defeated
+ * Returns true if all players are defeated
  * @param {Array} players
  * @returns {boolean}
  */
