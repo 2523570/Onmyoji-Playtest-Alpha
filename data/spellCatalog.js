@@ -1,4 +1,4 @@
-const spellCatalog = {
+export const spellCatalog = {
   Fire: {
     attack: [
       { name: "Cinder Talisman", dice: "1d6", type: "attack" },
@@ -77,3 +77,4 @@ const spellCatalog = {
 
   // Ice, Wind, Lightning follow same structure
 };
+
