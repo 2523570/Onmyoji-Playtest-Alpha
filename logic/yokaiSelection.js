@@ -2,7 +2,7 @@
 // Responsible for selecting a Yokai and exposing only partial info
 // until the Reveal Phase is complete
 
-import yokaiEncyclopedia from "../data/yokaiEncyclopedia.json" assert {type: "json"};
+import yokaiEncyclopedia from "../data/yokaiEncyclopedia.json" assert { type: "json" };
 
 /**
  * Selects a random Yokai from the encyclopedia
