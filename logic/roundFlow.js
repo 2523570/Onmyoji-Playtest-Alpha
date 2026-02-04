@@ -81,10 +81,11 @@ function showCluesOnly() {
 }
 
 function revealCombatResults(combatResult) {
-  console.log("Yokai:", gameState.currentYokai.name);
-  console.log("Element:", gameState.currentYokai.element);
-  console.log("HP Before:", combatResult.startingHP);
-  console.log("Damage Dealt:", combatResult.totalDamage);
-  console.log("HP Remaining:", combatResult.remainingHP);
-  console.log("Overflow Damage:", combatResult.overflowDamage);
+  console.log("Yokai:", combatResult.yokai);
+  console.log("HP Before:", combatResult.yokaiHP);
+  console.log("Attack:", combatResult.totalAttackDamage);
+  console.log("Defense:", combatResult.totalDefense);
+  console.log("Remaining HP:", combatResult.remainingHP);
+  console.log("Overflow:", combatResult.overflowDamage);
 }
+
