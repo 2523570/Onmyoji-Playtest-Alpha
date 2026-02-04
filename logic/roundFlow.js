@@ -1,9 +1,9 @@
 // roundFlow.js
 
 import { gameState, advanceRound, resolvePlayerDamage } from "./gameState.js";
-import { selectRandomYokai } from "./yokaiSelection.js";
-import { generateSpellHand } from "./spellHand.js";
-import { resolveCombat } from "./combatResolution.js";
+import { selectRandomYokai } from "./logic/yokaiSelection.js";
+import { generateSpellHand } from "./logic/spellHand.js";
+import { resolveCombat } from "./logic/combatResolution.js";
 
 /**
  * Starts a new round
