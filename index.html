@@ -80,7 +80,7 @@
 
   
   <!-- MAIN SCRIPT -->
-  <script type="module" src="./gameState.js">
+  <script type="module">
     import { startRound, submitSpells } from "./logic/roundFlow.js";
     import { gameState, initGame } from "./gameState.js";
     initGame(4);
@@ -115,7 +115,7 @@ if (!gameState.currentYokai) {
       combatPanel.classList.remove("hidden");
     };
 
-    import { advanceRound } from "./gamestate.js";
+    import { advanceRound } from "./gameState.js";
     nextRoundBtn.onclick = () => {
       combatPanel.classList.add("hidden");
       advanceRound();
