@@ -126,6 +126,11 @@ if (!gameState.currentYokai) {
     function renderRound() {
       roundInfo.textContent = `Round ${gameState.round}`;
 
+      if (!gameState.currentYokai) {
+        clueInfo.textContent = "Yokai not initialized.";
+        return;
+      }
+
       clueInfo.innerHTML = `
         Season: ${gameState.currentYokai.season}<br>
         Area: ${gameState.currentYokai.area}<br>
