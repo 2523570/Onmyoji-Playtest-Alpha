@@ -1,7 +1,7 @@
 // spellHand.js
 // Handles spell deck creation and player hand generation
 
-import { spellCatalog } from "./data/spellCatalog.js";
+import { spellCatalog } from "../data/spellCatalog.js";
 
 /**
  * Creates a shuffled copy of an array (Fisher-Yates)
