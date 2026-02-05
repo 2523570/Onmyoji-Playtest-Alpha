@@ -83,7 +83,6 @@
   <script type="module">
     import { startRound, submitSpells } from "./logic/roundFlow.js";
     import { gameState, initGame, advanceRound } from "./gameState.js";
-    initGame(4);
 
     const roundInfo = document.getElementById("roundInfo");
     const clueInfo = document.getElementById("clueInfo");
@@ -93,15 +92,11 @@
     const nextRoundBtn = document.getElementById("nextRoundBtn");
 
     
-    // Start game immediately
-    startRound();
-    
-// 🔒 Safety check before rendering
-if (!gameState.currentYokai) {
-  console.error("Yokai was not initialized");
-} else {
-  renderRound();
-}
+    (async function bootGame() {
+      initGame(4);
+      await startRound();
+      renderRound();
+    })();
 
 
     submitBtn.onclick = () => {
