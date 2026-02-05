@@ -2,13 +2,30 @@
 // Responsible for selecting a Yokai and exposing only partial info
 // until the Reveal Phase is complete
 
-import yokaiEncyclopedia from "../data/yokaiEncyclopedia.json" assert { type: "json" };
+let yokaiEncyclopedia = null;
 
+/**
+*Loads the Yokai encyclopedia once
+*/
+export async function loadYokaiEncyclopedia() {
+  if (yokaiEncyclopedia) return yokaiEncyclopedia;
+
+  const response = await fetch("../data/yokaiEncylopedia.json");
+  if (!response.ok) {
+    throw new Error("Failed to load yokaiEncyclopedia.json");
+  }
+
+  yokaiEncyclopedia = await response.json();
+  return yokaiEncyclopedia;
 /**
  * Selects a random Yokai from the encyclopedia
  * @returns {Object} full yokai object
  */
 export function selectRandomYokai() {
+  if (!yokaiEncyclopedia) {
+    throw new Error("Yokai encyclopediea not loaded");
+  }
+   
   const index = Math.floor(Math.random() * yokaiEncyclopedia.length);
   return yokaiEncyclopedia[index];
 }
