@@ -1,7 +1,7 @@
 // roundFlow.js
 
 import { gameState, advanceRound, resolvePlayerDamage } from "../gameState.js";
-import { selectRandomYokai } from "./yokaiSelection.js";
+import { selectRandomYokai, loadYokaiEncyclopedia } from "./yokaiSelection.js";
 import { generateSpellHand } from "./spellHand.js";
 import { resolveCombat } from "./combatResolution.js";
 
@@ -9,6 +9,8 @@ import { resolveCombat } from "./combatResolution.js";
  * Starts a new round
  */
 export function startRound() {
+  await loadYokaiEncyclopedia();
+  
   gameState.currentYokai = selectRandomYokai();
   gameState.spellHands = [];
 
@@ -17,11 +19,11 @@ export function startRound() {
     if (!player.alive) return;
 
     const handState = generateSpellHand(player.element);
-gameState.spellHands.push({
-  playerId: player.id,
-  hand: handState.hand,
-  element: player.element
-});
+    gameState.spellHands.push({
+      playerId: player.id,
+      hand: handState.hand,
+      element: player.element
+    });
 
   });
 
